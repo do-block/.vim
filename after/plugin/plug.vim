@@ -16,6 +16,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'sickill/vim-monokai'
 Plug 'ziglang/zig.vim'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 let g:gitgutter_sign_priority=0

@@ -20,7 +20,8 @@ set cinkeys=0},0),0],o,O,!^F
 set cino=g0,Ls,N-s,(0,u0,U1,Ws,m1,j1,J1,)50,#1,l1
 set formatoptions+=j
 set mouse=a
-set nowrap
+" set nowrap
+set wrap
 set colorcolumn=+1
 set showcmd
 set hlsearch
@@ -53,8 +54,7 @@ autocmd FileType c,cpp,cs,java,arduino,rust,typescript,javascript setlocal comme
 autocmd FileType desktop              setlocal commentstring=#\ %s
 autocmd FileType sql                  setlocal commentstring=--\ %s
 autocmd FileType xdefaults            setlocal commentstring=!%s
-autocmd FileType git,gitcommit,rust setlocal foldmethod=syntax foldlevel=3
-" foldlevelstart=99
+autocmd FileType git,gitcommit,rust,typescript,javascript,css setlocal foldmethod=syntax foldlevel=6
 
 let g:vim_home = expand('~/vim/')
 
@@ -86,6 +86,15 @@ let g:gruvbox_material_better_performance = 1
 colorscheme gruvbox-material
 let g:lightline = {'colorscheme' : 'gruvbox_material'}
 
+let g:plug_git_path = '/opt/homebrew/bin/git'
+let g:gitgutter_git_executable = '/opt/homebrew/bin/git'
+
+"let g:AutoPairs = {'(':')', '[':']', '{':'}', '"':'"', "'":"'"}
+"let g:AutoPairsShortcutToggle = '<M-e>'
+"let g:AutoPairsShortcutFastWrap = '<M-w>'
+"let g:AutoPairsFlyMode = 0
+"let g:AutoPairsShortcutBackInsert = '<M-b>'
+
 set statusline=%<%f\ %h%w%m%r\ 
 set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
 set statusline+=%{exists('*coc#status')?'\ [coc:\ '.coc#status().']':''}
@@ -95,3 +104,8 @@ set statusline+=%-14.(%4l/%L,%c%V%)\ %P
 
 " coc-explore map
 nmap <space>e <Cmd>CocCommand explorer<CR>
+
+" space-p map :History 
+nmap <space>p <Cmd>History<CR>
+" space-f map :Files
+nmap <space>f <Cmd>Files<CR>
