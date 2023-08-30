@@ -18,6 +18,8 @@ Plug 'junegunn/vim-easy-align'
 Plug 'sickill/vim-monokai'
 Plug 'ziglang/zig.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'vim-scripts/The-NERD-tree'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 let g:gitgutter_sign_priority=0

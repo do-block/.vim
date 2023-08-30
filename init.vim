@@ -95,15 +95,20 @@ set foldcolumn=1
 set foldlevel=99
 set foldlevelstart=99
 
-set statusline=%<%f\ %h%w%m%r\ 
+set statusline=%<%f\ %h%w%m%r\
 set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
 set statusline+=%{exists('*coc#status')?'\ [coc:\ '.coc#status().']':''}
 set statusline+=%=
 set statusline+=%{exists('g:loaded_sleuth')?SleuthIndicator():''}
-tet statusline+=%-14.(%4l/%L,%c%V%)\ %P
+set statusline+=%-14.(%4l/%L,%c%V%)\ %P
 
 " coc-explore map
-nmap <space>e <Cmd>CocCommand explorer<CR>
+" nmap <space>e <Cmd>CocCommand explorer<CR>
+
+" vim-script NERDTreeToggle
+map <space>e :NERDTreeToggle<CR>
+"How can I close vim if the only window left open is a NERDTree?
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " space-p map :History 
 nmap <space>p <Cmd>History<CR>
