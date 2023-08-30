@@ -69,7 +69,6 @@ for files in config_list
   endfor
 endfor
 
-
 " use a slightly darker background, like GitHub inline code blocks
 " let g:github_colors_soft = 1
 " more blocky diff markers in signcolumn (e.g. GitGutter)
@@ -89,18 +88,19 @@ let g:lightline = {'colorscheme' : 'gruvbox_material'}
 let g:plug_git_path = '/opt/homebrew/bin/git'
 let g:gitgutter_git_executable = '/opt/homebrew/bin/git'
 
-"let g:AutoPairs = {'(':')', '[':']', '{':'}', '"':'"', "'":"'"}
-"let g:AutoPairsShortcutToggle = '<M-e>'
-"let g:AutoPairsShortcutFastWrap = '<M-w>'
-"let g:AutoPairsFlyMode = 0
-"let g:AutoPairsShortcutBackInsert = '<M-b>'
+" fold setting
+set foldenable
+set fillchars=eob:\ ,fold:\ ,foldopen:,foldsep:\ ,foldclose:
+set foldcolumn=1
+set foldlevel=99
+set foldlevelstart=99
 
 set statusline=%<%f\ %h%w%m%r\ 
 set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
 set statusline+=%{exists('*coc#status')?'\ [coc:\ '.coc#status().']':''}
 set statusline+=%=
 set statusline+=%{exists('g:loaded_sleuth')?SleuthIndicator():''}
-set statusline+=%-14.(%4l/%L,%c%V%)\ %P
+tet statusline+=%-14.(%4l/%L,%c%V%)\ %P
 
 " coc-explore map
 nmap <space>e <Cmd>CocCommand explorer<CR>
