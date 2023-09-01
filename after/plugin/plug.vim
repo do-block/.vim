@@ -4,6 +4,7 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
@@ -20,8 +21,18 @@ Plug 'ziglang/zig.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/The-NERD-tree'
 Plug 'vim-airline/vim-airline'
+Plug 'morhetz/gruvbox'
+Plug 'justinmk/vim-sneak'
 call plug#end()
 
+" vim-sneak
+let g:sneak#label = 1
+" map f <Plug>Sneak_f
+" map F <Plug>Sneak_F
+" map t <Plug>Sneak_t
+" map T <Plug>Sneak_T
+
+" dd 
 let g:gitgutter_sign_priority=0
 let g:gitgutter_sign_added='+'
 let g:gitgutter_sign_removed='-'

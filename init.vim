@@ -15,7 +15,7 @@ set cindent
 set copyindent
 set laststatus=2
 set list
-set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:.,eol:↴
 set cinkeys=0},0),0],o,O,!^F
 set cino=g0,Ls,N-s,(0,u0,U1,Ws,m1,j1,J1,)50,#1,l1
 set formatoptions+=j
@@ -69,9 +69,9 @@ for files in config_list
   endfor
 endfor
 
-" use a slightly darker background, like GitHub inline code blocks
+" " use a slightly darker background, like GitHub inline code blocks
 " let g:github_colors_soft = 1
-" more blocky diff markers in signcolumn (e.g. GitGutter)
+" " more blocky diff markers in signcolumn (e.g. GitGutter)
 " let g:github_colors_block_diffmark = 0
 " colorscheme github
 
@@ -79,6 +79,8 @@ syntax on
 
 syntax enable
 "colorscheme monokai
+
+" colorscheme gruvbox
 
 let g:gruvbox_material_background = 'hard'
 let g:gruvbox_material_better_performance = 1
@@ -114,3 +116,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 nmap <space>p <Cmd>History<CR>
 " space-f map :Files
 nmap <space>f <Cmd>Files<CR>
+
+let g:smartim_default = 'com.apple.keylayout.ABC'
+" let g:smartim_default = 'com.logcg.inputmethod.LogInputMac3.LogInputMac3IME'
+" autocmd InsertEnter * :silent !/usr/local/bin/im-select com.logcg.inputmethod.LogInputMac3.LogInputMac3IME
+
+" autocmd VimLeave * :silent !/usr/local/bin/im-select im.rime.inputmethod.Squirrel.Hans
