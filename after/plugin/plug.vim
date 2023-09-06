@@ -5,32 +5,34 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-surround'
+Plug 'machakann/vim-sandwich'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sleuth'
 Plug 'mg979/vim-visual-multi'
 Plug 'github/copilot.vim'
 Plug 'cormacrelf/vim-colors-github'
-Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'sickill/vim-monokai'
 Plug 'ziglang/zig.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'vim-scripts/The-NERD-tree'
+Plug 'justinmk/vim-sneak'
+" theme
+Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
-Plug 'justinmk/vim-sneak'
+Plug 'sainnhe/everforest'
 call plug#end()
 
 " vim-sneak
 let g:sneak#label = 1
-" map f <Plug>Sneak_f
-" map F <Plug>Sneak_F
-" map t <Plug>Sneak_t
-" map T <Plug>Sneak_T
+ map f <Plug>Sneak_s
+ map F <Plug>Sneak_S
 
 " dd 
 let g:gitgutter_sign_priority=0
@@ -44,4 +46,3 @@ let g:gitgutter_sign_modified_removed='*-'
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-

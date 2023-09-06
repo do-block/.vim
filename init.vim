@@ -18,7 +18,8 @@ set cindent
 set copyindent
 set laststatus=2
 set list
-set listchars=tab:›\ ,trail:•,extends:#,nbsp:.,eol:⏎
+"set listchars=tab:›\ ,trail:•,extends:#,nbsp:.,eol:⏎
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:.,eol:↩
 set cinkeys=0},0),0],o,O,!^F
 set cino=g0,Ls,N-s,(0,u0,U1,Ws,m1,j1,J1,)50,#1,l1
 set formatoptions+=j
@@ -56,7 +57,7 @@ autocmd FileType c,cpp,cs,java,arduino,rust,typescript,javascript setlocal comme
 autocmd FileType desktop              setlocal commentstring=#\ %s
 autocmd FileType sql                  setlocal commentstring=--\ %s
 autocmd FileType xdefaults            setlocal commentstring=!%s
-autocmd FileType git,gitcommit,rust,typescript,javascript,css setlocal foldmethod=syntax foldlevel=6
+autocmd FileType git,gitcommit,rust,typescript,javascript,css setlocal foldmethod=syntax foldlevel=99
 
 
 " plugin and coc config
@@ -73,12 +74,21 @@ for files in config_list
   endfor
 endfor
 
+"" open termguicolors
+"" everforest config
+if has('termguicolors')
+          set termguicolors
+endif
+"" gruvbox_material theme
+" let g:gruvbox_material_background = 'hard'
+" let g:gruvbox_material_better_performance = 1
+" let g:airline_them = {'colorscheme' : 'gruvbox_material'}
 
-" theme
-let g:gruvbox_material_background = 'hard'
-let g:gruvbox_material_better_performance = 1
-let g:lightline = {'colorscheme' : 'gruvbox_material'}
-colorscheme gruvbox-material
+" let g:everforest_background = 'hard'
+" let g:everforest_better_performance = 1
+" let g:airline_theme = 'everforest'
+" colorscheme everforest
+colorscheme habamax
 
 let g:plug_git_path = '/opt/homebrew/bin/git'
 let g:gitgutter_git_executable = '/opt/homebrew/bin/git'
@@ -108,3 +118,27 @@ nmap <space>p <Cmd>History<CR>
 nmap <space>f <Cmd>Files<CR>
 
 let g:smartim_default = 'com.apple.keylayout.ABC'
+
+" leaderF
+" don't show the help in normal mode
+let g:Lf_HideHelp = 1
+let g:Lf_UseCache = 0
+let g:Lf_UseVersionControlTool = 0
+let g:Lf_IgnoreCurrentBufferName = 1
+
+let g:Lf_RgConfig = [
+  \ "--max-columns=150",
+  \ "--glob=!node_modules/*",
+  \ "--glob=!dist/*",]
+
+" popup mode
+let g:Lf_WindowPosition = 'popup'
+let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "DejaVu Sans Mono for Powerline" }
+let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
+
+let g:Lf_ShortcutF = "<leader>ff"
+noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
+noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
+noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
+noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
+nmap <leader>fg <Cmd>Leaderf rg<CR>
