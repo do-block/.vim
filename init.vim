@@ -18,8 +18,7 @@ set cindent
 set copyindent
 set laststatus=2
 set list
-"set listchars=tab:›\ ,trail:•,extends:#,nbsp:.,eol:⏎
-set listchars=tab:›\ ,trail:•,extends:#,nbsp:.,eol:↩
+set listchars=tab:↪️\ ,trail:•,extends:#,nbsp:.,eol:↩
 set cinkeys=0},0),0],o,O,!^F
 set cino=g0,Ls,N-s,(0,u0,U1,Ws,m1,j1,J1,)50,#1,l1
 set formatoptions+=j
@@ -79,16 +78,19 @@ endfor
 if has('termguicolors')
           set termguicolors
 endif
-"" gruvbox_material theme
+
+"gruvbox_material theme
 " let g:gruvbox_material_background = 'hard'
 " let g:gruvbox_material_better_performance = 1
 " let g:airline_them = {'colorscheme' : 'gruvbox_material'}
 
-" let g:everforest_background = 'hard'
-" let g:everforest_better_performance = 1
-" let g:airline_theme = 'everforest'
-" colorscheme everforest
-colorscheme habamax
+"github theme
+"colorscheme github_dark
+
+let g:everforest_background = 'hard'
+let g:everforest_better_performance = 1
+let g:airline_theme = 'everforest'
+colorscheme everforest
 
 let g:plug_git_path = '/opt/homebrew/bin/git'
 let g:gitgutter_git_executable = '/opt/homebrew/bin/git'
@@ -129,6 +131,8 @@ let g:Lf_IgnoreCurrentBufferName = 1
 let g:Lf_RgConfig = [
   \ "--max-columns=150",
   \ "--glob=!node_modules/*",
+  \ "--glob=!package-lock.json",
+  \ "--glob=!yarn.lock",
   \ "--glob=!dist/*",]
 
 " popup mode

@@ -157,5 +157,5 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-let g:coc_node_path = '/Users/oops/.nvm/versions/node/v20.5.1/bin/node'
+let g:coc_node_path = '/Users/oops/.volta/bin/node'
 
