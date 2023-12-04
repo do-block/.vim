@@ -57,6 +57,9 @@ autocmd FileType desktop              setlocal commentstring=#\ %s
 autocmd FileType sql                  setlocal commentstring=--\ %s
 autocmd FileType xdefaults            setlocal commentstring=!%s
 autocmd FileType git,gitcommit,rust,typescript,javascript,css setlocal foldmethod=syntax foldlevel=99
+" support vue
+autocmd FileType vue                  setlocal commentstring=/**\ %s\ */
+autocm FileType vue                   setlocal foldmethod=indent foldlevel=99
 
 
 " plugin and coc config
