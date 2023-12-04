@@ -25,7 +25,7 @@ set formatoptions+=j
 set mouse=a
 " set nowrap
 set wrap
-set colorcolumn=+1
+" set colorcolumn=+1
 set showcmd
 set hlsearch
 set nrformats=bin,hex,alpha
@@ -79,18 +79,21 @@ if has('termguicolors')
           set termguicolors
 endif
 
-"gruvbox_material theme
+" ""gruvbox_material theme
 " let g:gruvbox_material_background = 'hard'
 " let g:gruvbox_material_better_performance = 1
 " let g:airline_them = {'colorscheme' : 'gruvbox_material'}
+" colorscheme gruvbox_material 
 
 "github theme
-"colorscheme github_dark
+" colorscheme github_dark
 
-let g:everforest_background = 'hard'
-let g:everforest_better_performance = 1
-let g:airline_theme = 'everforest'
-colorscheme everforest
+colorscheme gruvbox
+
+" let g:everforest_background = 'hard'
+" let g:everforest_better_performance = 1
+" let g:airline_theme = 'everforest'
+" colorscheme everforest
 
 let g:plug_git_path = '/opt/homebrew/bin/git'
 let g:gitgutter_git_executable = '/opt/homebrew/bin/git'
